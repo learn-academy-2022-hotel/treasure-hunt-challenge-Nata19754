@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "./App.css"
+
 import Square from './components/Square'
 
 const App = () => {
@@ -15,23 +16,34 @@ const App = () => {
     "?"
   ])
 
+
+  const [treasureLocation, setTreasureLocation]= useState(Math.floor(Math.random() * board.length))
+
   const handleGamePlay = (clickedSquare) => {
-  alert(clickedSquare)
-  } 
+    let updateBoard =[...board]
+    updateBoard[clickedSquare]= "🌴"
+    setBoard(updateBoard)
+  }
+
+  console.log(treasureLocation)
+
 
   return (
     <>
       <h1>Treasure Hunt Game</h1>
       <div className="board">
-      {board.map((square, index) => {
-        return(
-          <Square
-           square={square}
-           index= {index}
-           handleGameplay={handleGamePlay}/>
-        )
-      })}
+
+        {board.map((square, index)=> {
+          return (
+            <Square
+            square={square}
+            index={index}
+            handleGamePlay={handleGamePlay}/>
+          )
+        })}
       </div>
+
+
 
     </>
   )
