@@ -1,5 +1,6 @@
 import React from "react"
 
+
 const Square = ({square, index, handleGamePlay}) => {
 
 
@@ -9,6 +10,7 @@ const Square = ({square, index, handleGamePlay}) => {
   return (
     <>
       <div className="square" onClick= {handleClick}>{square}</div>
+
     </>
   )
 }
