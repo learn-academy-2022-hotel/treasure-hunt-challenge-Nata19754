@@ -1,9 +1,13 @@
 import React from "react"
 
-const Square = () => {
+const Square = ({ Square, index, handleGameplay }) => {
+
+  const handleClick = () => {
+    
+  }
   return (
     <>
-      <div className="square"></div>
+      <div className="square">{Square}</div>
     </>
   )
 }
